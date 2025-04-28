@@ -60,7 +60,7 @@ The evaluation involved 20 manually formulated questions covering different comp
 
 - **Generated Answer (Base + Gemma - Developer):**  
 ```text
-   A GSD file (German: Geräte-Stücklisten Datei, meaning "device description file") is a text file that describes a PROFIBUS slave device to a master controller.
+A GSD file (German: Geräte-Stücklisten Datei, meaning "device description file") is a text file that describes a PROFIBUS slave device to a master controller.
 
   Where to get it: GSD files are provided by the manufacturer of the PROFIBUS slave device. They are typically available for download from the manufacturer's website or included on the device's documentation.
 
@@ -76,7 +76,7 @@ The evaluation involved 20 manually formulated questions covering different comp
 ```
 - **Reference Answer (NotebookLM - Developer):**  
 ```text
-  A General Station Description (GSD) file is a specially formatted ASCII file that serves as an electronic device data sheet for PROFIBUS devices. It is also referred to as a "Communication Feature List".
+A General Station Description (GSD) file is a specially formatted ASCII file that serves as an electronic device data sheet for PROFIBUS devices. It is also referred to as a "Communication Feature List".
         You can typically obtain the GSD file from the device manufacturer of a DP-Slave or a DP-Master. In the case of Profile GSD files, which are defined by the PA profile, they are made available by PNO (PROFIBUS and PROFINET International) and can be found on the PI web server.
         The function of a GSD file is multifaceted:
         
