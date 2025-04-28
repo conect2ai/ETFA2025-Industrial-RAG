@@ -50,6 +50,82 @@ ETFA2025-Industrial-RAG/
 └── README.md                        # Project overview and usage
 ```
 
+## 📝 Sample Questions
+
+The evaluation involved 20 manually formulated questions covering different complexity levels within PROFIBUS technical documentation. Two representative examples, based on the Developer category, are presented as follows, including generated answers and reference responses.
+
+---
+
+**Q1. What is a GSD file, where can you get it, and what is its function?**
+
+- **Generated Answer (Base + Gemma - Developer):**  
+```text
+   A GSD file (German: Geräte-Stücklisten Datei, meaning "device description file") is a text file that describes a PROFIBUS slave device to a master controller.
+
+  Where to get it: GSD files are provided by the manufacturer of the PROFIBUS slave device. They are typically available for download from the manufacturer's website or included on the device's documentation.
+
+  Function: The GSD file contains information such as:
+
+  *   Device name and manufacturer
+  *   Module type and hardware revision
+  *   Input/Output data block definitions (data types, addresses, etc.)
+  *   Parameterization options
+  *   Communication parameters
+
+  The PROFIBUS master uses this information to correctly configure and communicate with the slave device. Without a GSD file, the master would not know how to interpret the data from the slave or how to configure its parameters.
+```
+- **Reference Answer (NotebookLM - Developer):**  
+```text
+  A General Station Description (GSD) file is a specially formatted ASCII file that serves as an electronic device data sheet for PROFIBUS devices. It is also referred to as a "Communication Feature List".
+        You can typically obtain the GSD file from the device manufacturer of a DP-Slave or a DP-Master. In the case of Profile GSD files, which are defined by the PA profile, they are made available by PNO (PROFIBUS and PROFINET International) and can be found on the PI web server.
+        The function of a GSD file is multifaceted:
+        
+            * It provides configuration tools with information about a PROFIBUS device. This includes:
+                * Information needed to identify the connected device.
+                * A description of device data that can be accessed via the network, such as configurable parameters.
+                * A description of the communication capabilities supported by the device, such as transmission rate.
+                * Additional vendor-specific information.
+
+            * It allows a configuration tool to automate the device configuration process.
+            * It provides an open, consistent, and compatible approach for performing device configuration. All devices with a communication interface according to IEC 61784-1 CP3/1 and CP3/2 shall have a GSD file.
+
+            * Its main intention is to provide device information on a PROFIBUS communication network.
+            * It characterizes the features and performance capabilities of PROFIBUS devices.
+            * It enables the user to check all data in the configuration phase of a PROFIBUS system, allowing errors to be avoided as early as possible.
+            * Based on its defined file format, it makes it possible to realize vendor-independent configuration tools for PROFIBUS systems.
+            * The configuration tool uses the GSD files for testing the data entered regarding the observance of limits and validity related to the performance of the individual device.
+            * The distinction of the GSD files is achieved by the vendor- and device-identifiers.
+            * It aims to achieve a simple Plug and Play configuration for PROFIBUS devices by listing the communication features.
+            * It comprises definitions for the physical layer, the protocol layer, the modeling of the slave / IO device, startup parameterization of the communication and application layers.
+            * A Profile-GSD allows for device replacement without changing the network configuration of the automation system, as the cyclic data exchange is not impacted.
+            * Via the GSD file, cyclic communication related device functionality is described.
+        In essence, the GSD file acts as a device-specific data sheet in a machine-readable format, enabling seamless integration and configuration of PROFIBUS devices from various manufacturers within a PROFIBUS network.
+```
+---
+
+**Q5. Briefly explain the function of a watchdog timer in a PROFIBUS DP slave.**
+
+- **Generated Answer (HyDE + Gemma - Developer):**  
+ ```text
+A watchdog timer in a PROFIBUS DP slave is a safety mechanism that detects and responds to a slave device that has ceased to function correctly. It works by requiring the slave to periodically "kick" or signal the master node, confirming its operational status. If the slave fails to do so within a predefined time interval, the watchdog timer expires, and the master node assumes the slave is faulty and takes appropriate action, such as disconnecting it from the network. This prevents a malfunctioning slave from disrupting the entire PROFIBUS network.
+ ```
+- **Reference Answer (NotebookLM - Developer):**  
+```text
+In a PROFIBUS DP slave, a watchdog timer (TWD) serves a crucial safety function by monitoring the communication with the DP master (Class 1). The primary function of this timer is to detect a failure in the communication from the master.
+According to IEC 61158-5-3:
+* The watchdog control in a DP-slave ensures that if the DP-master fails, the outputs of the slave will be set to a safe state after the expiration of the watchdog time.
+* The watchdog time (TWD) is calculated using the formula: TWD = Watchdog Time Base × WD Fact 1 × WD Fact 2. These factors are dynamic attributes.
+* If the DP-slave does not support DPV1 functionalities (i.e., the attribute DPV1 Supported is FALSE), the Watchdog Time Base shall be set to 10 ms.
+IEC 61158-6-3 further elaborates on this:
+* The Watchdog control Timer at the DP-slave is restarted by received Requests on the bus master side.
+* If this timer expires, the DP-slave will set its outputs to the safe state.
+* Rule (2) states that TWD > TTR, although the definition of TTR is not provided in the immediate context.
+* Rule (3) also states that TWD > Min_Slave_Interval, where Min_Slave_Interval specifies the smallest allowed period between two Slave poll cycles.
+It's also relevant to note the concept of a time-out time (TTO), which is used in both Master and Slave stations to monitor bus activity and idle time. If no bus activity is detected within this time, it can be considered a communication error, and in the case of a Master station, it can lead to re-initialization.
+In the context of PROFIsafe (safety-related communication), there is also an F-Watchdog time (F_WD_Time) within F-Devices and their F-Host counterparts. This tiis started when a safety PDU with a new consecutive number is sent and is used to monitor the timely arrival of the next valid safety PDU. If this timer expirthe recipient switches to a safe state.
+In summary, the watchdog timer in a PROFIBUS DP slave is a safety mechanism that monitors the ongoing communication with the master. If the master fails to communicate within the configured watchdog time, the slave will autonomously set its outputs to a predefined safe state, preventing potential hazards in the controlled process.
+```
+
 ## 📊 Evaluation Data
 
 The following tables present the results according to the average performance, considering all 10 questions applied to each model and technique, and the statistical test results comparing the techniques pairwise. The mean values provide a general overview of the models’ behavior across multiple evaluation metrics, while the statistical analysis — including p-values and Cohen’s d effect sizes — identifies whether the observed differences between techniques are statistically significant and quantifies the magnitude of these differences. 
