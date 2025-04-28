@@ -50,6 +50,218 @@ ETFA2025-Industrial-RAG/
 └── README.md                        # Project overview and usage
 ```
 
+## 📊 Evaluation Data
+
+The following tables present the results according to the average performance, considering all 10 questions applied to each model and technique, and the statistical test results comparing the techniques pairwise. The mean values provide a general overview of the models’ behavior across multiple evaluation metrics, while the statistical analysis — including p-values and Cohen’s d effect sizes — identifies whether the observed differences between techniques are statistically significant and quantifies the magnitude of these differences. 
+ 
+### Developer - Average
+| model   | tech          |   rouge1-P |   rouge1-R |   rouge1-F1 |   rouge2-P |   rouge2-R |   rouge2-F1 |   rougeL-P |   rougeL-R |   rougeL-F1 |   METEOR |   BERTScore Precision |   BERTScore Recall |   BERTScore F1 |   MATTR |
+|:--------|:--------------|-----------:|-----------:|------------:|-----------:|-----------:|------------:|-----------:|-----------:|------------:|---------:|----------------------:|-------------------:|---------------:|--------:|
+| GPT     | Base          |     0.3501 |     0.6883 |      0.4518 |     0.133  |     0.2584 |      0.1705 |     0.1784 |     0.3562 |      0.2308 |   0.358  |                0.8632 |             0.8925 |         0.8775 |  0.7392 |
+| GPT     | Decomposition |     0.2742 |     0.6756 |      0.388  |     0.0952 |     0.2359 |      0.135  |     0.1425 |     0.3526 |      0.2019 |   0.3282 |                0.8527 |             0.8887 |         0.8703 |  0.7392 |
+| GPT     | HyDE          |     0.7062 |     0.3677 |      0.4746 |     0.2778 |     0.1464 |      0.1881 |     0.3566 |     0.1851 |      0.239  |   0.222  |                0.8948 |             0.8662 |         0.8802 |  0.7457 |
+| Gemma   | Base          |     0.6209 |     0.1888 |      0.2719 |     0.2105 |     0.0587 |      0.0867 |     0.3651 |     0.1024 |      0.1506 |   0.1165 |                0.881  |             0.8333 |         0.8562 |  0.7582 |
+| Gemma   | Decomposition |     0.5569 |     0.3712 |      0.4336 |     0.1499 |     0.1019 |      0.118  |     0.2634 |     0.1724 |      0.2028 |   0.2099 |                0.8727 |             0.86   |         0.8662 |  0.7579 |
+| Gemma   | HyDE          |     0.5706 |     0.2417 |      0.3174 |     0.1667 |     0.0713 |      0.0941 |     0.3134 |     0.1256 |      0.1677 |   0.1469 |                0.878  |             0.8421 |         0.8595 |  0.7669 |
+
+### Developer - Statistical Test
+#### Gemma
+| metric              | tech_A        | tech_B        |   p_value |   cohen_d |
+|:--------------------|:--------------|:--------------|----------:|----------:|
+| rouge1-P            | Base          | Decomposition |    0.1244 |      0.54 |
+| rouge1-R            | Base          | Decomposition |    0.0031 |     -1.26 |
+| rouge1-F1           | Base          | Decomposition |    0.001  |     -1.5  |
+| rouge2-P            | Base          | Decomposition |    0.0294 |      0.82 |
+| rouge2-R            | Base          | Decomposition |    0.0169 |     -0.93 |
+| rouge2-F1           | Base          | Decomposition |    0.0402 |     -0.76 |
+| rougeL-P            | Base          | Decomposition |    0.02   |      0.89 |
+| rougeL-R            | Base          | Decomposition |    0.0048 |     -1.18 |
+| rougeL-F1           | Base          | Decomposition |    0.0056 |     -1.14 |
+| METEOR              | Base          | Decomposition |    0.0059 |     -1.13 |
+| BERTScore Precision | Base          | Decomposition |    0.138  |      0.51 |
+| BERTScore Recall    | Base          | Decomposition |    0.0112 |     -1    |
+| BERTScore F1        | Base          | Decomposition |    0.0463 |     -0.73 |
+| MATTR               | Base          | Decomposition |    0.9791 |      0.01 |
+| rouge1-P            | Base          | HyDE          |    0.0546 |      0.7  |
+| rouge1-R            | Base          | HyDE          |    0.2087 |     -0.43 |
+| rouge1-F1           | Base          | HyDE          |    0.2715 |     -0.37 |
+| rouge2-P            | Base          | HyDE          |    0.0457 |      0.73 |
+| rouge2-R            | Base          | HyDE          |    0.3941 |     -0.28 |
+| rouge2-F1           | Base          | HyDE          |    0.6326 |     -0.16 |
+| rougeL-P            | Base          | HyDE          |    0.0731 |      0.64 |
+| rougeL-R            | Base          | HyDE          |    0.2061 |     -0.43 |
+| rougeL-F1           | Base          | HyDE          |    0.2941 |     -0.35 |
+| METEOR              | Base          | HyDE          |    0.2034 |     -0.43 |
+| BERTScore Precision | Base          | HyDE          |    0.3627 |      0.3  |
+| BERTScore Recall    | Base          | HyDE          |    0.1951 |     -0.44 |
+| BERTScore F1        | Base          | HyDE          |    0.3522 |     -0.31 |
+| MATTR               | Base          | HyDE          |    0.6487 |     -0.15 |
+| rouge1-P            | Decomposition | HyDE          |    0.6216 |     -0.16 |
+| rouge1-R            | Decomposition | HyDE          |    0.0304 |      0.81 |
+| rouge1-F1           | Decomposition | HyDE          |    0.0333 |      0.79 |
+| rouge2-P            | Decomposition | HyDE          |    0.4899 |     -0.23 |
+| rouge2-R            | Decomposition | HyDE          |    0.0933 |      0.59 |
+| rouge2-F1           | Decomposition | HyDE          |    0.188  |      0.45 |
+| rougeL-P            | Decomposition | HyDE          |    0.0976 |     -0.58 |
+| rougeL-R            | Decomposition | HyDE          |    0.0357 |      0.78 |
+| rougeL-F1           | Decomposition | HyDE          |    0.0873 |      0.61 |
+| METEOR              | Decomposition | HyDE          |    0.0666 |      0.66 |
+| BERTScore Precision | Decomposition | HyDE          |    0.2722 |     -0.37 |
+| BERTScore Recall    | Decomposition | HyDE          |    0.0663 |      0.66 |
+| BERTScore F1        | Decomposition | HyDE          |    0.2317 |      0.41 |
+| MATTR               | Decomposition | HyDE          |    0.6756 |     -0.14 |
+
+#### GPT
+| metric              | tech_A        | tech_B        |   p_value |   cohen_d |
+|:--------------------|:--------------|:--------------|----------:|----------:|
+| rouge1-P            | Base          | Decomposition |    0.0394 |      0.76 |
+| rouge1-R            | Base          | Decomposition |    0.485  |      0.23 |
+| rouge1-F1           | Base          | Decomposition |    0.0325 |      0.8  |
+| rouge2-P            | Base          | Decomposition |    0.0621 |      0.67 |
+| rouge2-R            | Base          | Decomposition |    0.1416 |      0.51 |
+| rouge2-F1           | Base          | Decomposition |    0.0541 |      0.7  |
+| rougeL-P            | Base          | Decomposition |    0.0597 |      0.68 |
+| rougeL-R            | Base          | Decomposition |    0.7699 |      0.1  |
+| rougeL-F1           | Base          | Decomposition |    0.057  |      0.69 |
+| METEOR              | Base          | Decomposition |    0.0149 |      0.95 |
+| BERTScore Precision | Base          | Decomposition |    0.0371 |      0.77 |
+| BERTScore Recall    | Base          | Decomposition |    0.2032 |      0.43 |
+| BERTScore F1        | Base          | Decomposition |    0.0408 |      0.75 |
+| MATTR               | Base          | Decomposition |  nan      |    nan    |
+| rouge1-P            | Base          | HyDE          |    0      |     -2.53 |
+| rouge1-R            | Base          | HyDE          |    0      |      2.52 |
+| rouge1-F1           | Base          | HyDE          |    0.1633 |     -0.48 |
+| rouge2-P            | Base          | HyDE          |    0.0001 |     -2    |
+| rouge2-R            | Base          | HyDE          |    0.0001 |      2.1  |
+| rouge2-F1           | Base          | HyDE          |    0.103  |     -0.57 |
+| rougeL-P            | Base          | HyDE          |    0      |     -2.36 |
+| rougeL-R            | Base          | HyDE          |    0.0001 |      2.05 |
+| rougeL-F1           | Base          | HyDE          |    0.3206 |     -0.33 |
+| METEOR              | Base          | HyDE          |    0      |      2.97 |
+| BERTScore Precision | Base          | HyDE          |    0.0001 |     -2.14 |
+| BERTScore Recall    | Base          | HyDE          |    0.0016 |      1.41 |
+| BERTScore F1        | Base          | HyDE          |    0.1182 |     -0.55 |
+| MATTR               | Base          | HyDE          |    0.5407 |     -0.2  |
+| rouge1-P            | Decomposition | HyDE          |    0      |     -4.93 |
+| rouge1-R            | Decomposition | HyDE          |    0      |      3.06 |
+| rouge1-F1           | Decomposition | HyDE          |    0.0096 |     -1.04 |
+| rouge2-P            | Decomposition | HyDE          |    0.0001 |     -2.22 |
+| rouge2-R            | Decomposition | HyDE          |    0.0008 |      1.55 |
+| rouge2-F1           | Decomposition | HyDE          |    0.0292 |     -0.82 |
+| rougeL-P            | Decomposition | HyDE          |    0      |     -3.59 |
+| rougeL-R            | Decomposition | HyDE          |    0      |      2.65 |
+| rougeL-F1           | Decomposition | HyDE          |    0.0497 |     -0.72 |
+| METEOR              | Decomposition | HyDE          |    0.0001 |      2.18 |
+| BERTScore Precision | Decomposition | HyDE          |    0      |     -3.47 |
+| BERTScore Recall    | Decomposition | HyDE          |    0.0058 |      1.14 |
+| BERTScore F1        | Decomposition | HyDE          |    0.0141 |     -0.96 |
+| MATTR               | Decomposition | HyDE          |    0.5407 |     -0.2  |
+
+
+### Engineering - Average
+| model   | tech          |   rouge1-P |   rouge1-R |   rouge1-F1 |   rouge2-P |   rouge2-R |   rouge2-F1 |   rougeL-P |   rougeL-R |   rougeL-F1 |   METEOR |   BERTScore Precision |   BERTScore Recall |   BERTScore F1 |   MATTR |
+|:--------|:--------------|-----------:|-----------:|------------:|-----------:|-----------:|------------:|-----------:|-----------:|------------:|---------:|----------------------:|-------------------:|---------------:|--------:|
+| GPT     | Base          |     0.6834 |     0.3678 |      0.4514 |     0.3068 |     0.1595 |      0.1982 |     0.3747 |     0.2031 |      0.2483 |   0.2357 |                0.9011 |             0.8784 |         0.8895 |  0.7763 |
+| GPT     | Decomposition |     0.6282 |     0.34   |      0.4066 |     0.2675 |     0.1316 |      0.1656 |     0.3323 |     0.1805 |      0.2155 |   0.2169 |                0.8875 |             0.8704 |         0.8787 |  0.7997 |
+| GPT     | HyDE          |     0.8065 |     0.1156 |      0.1913 |     0.3945 |     0.0504 |      0.0855 |     0.5916 |     0.0816 |      0.1363 |   0.0816 |                0.9017 |             0.8201 |         0.8588 |  0.8087 |
+| Gemma   | Base          |     0.3215 |     0.6393 |      0.4158 |     0.1292 |     0.2623 |      0.1684 |     0.1769 |     0.3506 |      0.2289 |   0.3411 |                0.872  |             0.8907 |         0.8812 |  0.7643 |
+| Gemma   | Decomposition |     0.5267 |     0.4626 |      0.4671 |     0.1789 |     0.1563 |      0.1592 |     0.2336 |     0.2125 |      0.2109 |   0.2709 |                0.8769 |             0.8781 |         0.8774 |  0.8092 |
+| Gemma   | HyDE          |     0.5976 |     0.3188 |      0.4032 |     0.2018 |     0.1038 |      0.1326 |     0.3002 |     0.1622 |      0.2042 |   0.1943 |                0.8857 |             0.8689 |         0.8772 |  0.8015 |
+
+
+### Engineering - Statistical Test
+#### Gemma
+| metric              | tech_A        | tech_B        |   p_value |   cohen_d |
+|:--------------------|:--------------|:--------------|----------:|----------:|
+| rouge1-P            | Base          | Decomposition |    0.0074 |     -1.09 |
+| rouge1-R            | Base          | Decomposition |    0.032  |      0.8  |
+| rouge1-F1           | Base          | Decomposition |    0.0371 |     -0.77 |
+| rouge2-P            | Base          | Decomposition |    0.0441 |     -0.74 |
+| rouge2-R            | Base          | Decomposition |    0.0174 |      0.92 |
+| rouge2-F1           | Base          | Decomposition |    0.5635 |      0.19 |
+| rougeL-P            | Base          | Decomposition |    0.0512 |     -0.71 |
+| rougeL-R            | Base          | Decomposition |    0.0028 |      1.28 |
+| rougeL-F1           | Base          | Decomposition |    0.0209 |      0.88 |
+| METEOR              | Base          | Decomposition |    0.0237 |      0.86 |
+| BERTScore Precision | Base          | Decomposition |    0.3803 |     -0.29 |
+| BERTScore Recall    | Base          | Decomposition |    0.0656 |      0.66 |
+| BERTScore F1        | Base          | Decomposition |    0.3525 |      0.31 |
+| MATTR               | Base          | Decomposition |    0.0108 |     -1.01 |
+| rouge1-P            | Base          | HyDE          |    0.0009 |     -1.53 |
+| rouge1-R            | Base          | HyDE          |    0.0002 |      1.91 |
+| rouge1-F1           | Base          | HyDE          |    0.5644 |      0.19 |
+| rouge2-P            | Base          | HyDE          |    0.0395 |     -0.76 |
+| rouge2-R            | Base          | HyDE          |    0.002  |      1.35 |
+| rouge2-F1           | Base          | HyDE          |    0.1213 |      0.54 |
+| rougeL-P            | Base          | HyDE          |    0.0024 |     -1.32 |
+| rougeL-R            | Base          | HyDE          |    0.0002 |      1.9  |
+| rougeL-F1           | Base          | HyDE          |    0.0636 |      0.67 |
+| METEOR              | Base          | HyDE          |    0.0001 |      2.09 |
+| BERTScore Precision | Base          | HyDE          |    0.0451 |     -0.74 |
+| BERTScore Recall    | Base          | HyDE          |    0.0043 |      1.2  |
+| BERTScore F1        | Base          | HyDE          |    0.3083 |      0.34 |
+| MATTR               | Base          | HyDE          |    0.0014 |     -1.44 |
+| rouge1-P            | Decomposition | HyDE          |    0.0514 |     -0.71 |
+| rouge1-R            | Decomposition | HyDE          |    0.0006 |      1.65 |
+| rouge1-F1           | Decomposition | HyDE          |    0.0013 |      1.46 |
+| rouge2-P            | Decomposition | HyDE          |    0.3334 |     -0.32 |
+| rouge2-R            | Decomposition | HyDE          |    0.0044 |      1.19 |
+| rouge2-F1           | Decomposition | HyDE          |    0.0862 |      0.61 |
+| rougeL-P            | Decomposition | HyDE          |    0.0216 |     -0.88 |
+| rougeL-R            | Decomposition | HyDE          |    0.0058 |      1.14 |
+| rougeL-F1           | Decomposition | HyDE          |    0.5761 |      0.18 |
+| METEOR              | Decomposition | HyDE          |    0.0001 |      2.12 |
+| BERTScore Precision | Decomposition | HyDE          |    0.1748 |     -0.47 |
+| BERTScore Recall    | Decomposition | HyDE          |    0.0697 |      0.65 |
+| BERTScore F1        | Decomposition | HyDE          |    0.9567 |      0.02 |
+| MATTR               | Decomposition | HyDE          |    0.4283 |      0.26 |
+
+#### GPT
+| metric              | tech_A        | tech_B        |   p_value |   cohen_d |
+|:--------------------|:--------------|:--------------|----------:|----------:|
+| rouge1-P            | Base          | Decomposition |    0.1126 |      0.56 |
+| rouge1-R            | Base          | Decomposition |    0.3054 |      0.34 |
+| rouge1-F1           | Base          | Decomposition |    0.0544 |      0.7  |
+| rouge2-P            | Base          | Decomposition |    0.1953 |      0.44 |
+| rouge2-R            | Base          | Decomposition |    0.0298 |      0.81 |
+| rouge2-F1           | Base          | Decomposition |    0.012  |      0.99 |
+| rougeL-P            | Base          | Decomposition |    0.1717 |      0.47 |
+| rougeL-R            | Base          | Decomposition |    0.0212 |      0.88 |
+| rougeL-F1           | Base          | Decomposition |    0.0114 |      1    |
+| METEOR              | Base          | Decomposition |    0.1097 |      0.56 |
+| BERTScore Precision | Base          | Decomposition |    0.0249 |      0.85 |
+| BERTScore Recall    | Base          | Decomposition |    0.0112 |      1.01 |
+| BERTScore F1        | Base          | Decomposition |    0.0029 |      1.28 |
+| MATTR               | Base          | Decomposition |    0.2569 |     -0.38 |
+| rouge1-P            | Base          | HyDE          |    0.0001 |     -2.25 |
+| rouge1-R            | Base          | HyDE          |    0      |      2.61 |
+| rouge1-F1           | Base          | HyDE          |    0.0001 |      2.21 |
+| rouge2-P            | Base          | HyDE          |    0.0075 |     -1.08 |
+| rouge2-R            | Base          | HyDE          |    0.0001 |      2.25 |
+| rouge2-F1           | Base          | HyDE          |    0.0001 |      2.1  |
+| rougeL-P            | Base          | HyDE          |    0.0001 |     -2.03 |
+| rougeL-R            | Base          | HyDE          |    0      |      2.43 |
+| rougeL-F1           | Base          | HyDE          |    0.0003 |      1.83 |
+| METEOR              | Base          | HyDE          |    0      |      2.57 |
+| BERTScore Precision | Base          | HyDE          |    0.8662 |     -0.05 |
+| BERTScore Recall    | Base          | HyDE          |    0      |      2.37 |
+| BERTScore F1        | Base          | HyDE          |    0.0001 |      2.2  |
+| MATTR               | Base          | HyDE          |    0.3248 |     -0.33 |
+| rouge1-P            | Decomposition | HyDE          |    0.0011 |     -1.5  |
+| rouge1-R            | Decomposition | HyDE          |    0      |      2.97 |
+| rouge1-F1           | Decomposition | HyDE          |    0.0003 |      1.84 |
+| rouge2-P            | Decomposition | HyDE          |    0.0042 |     -1.2  |
+| rouge2-R            | Decomposition | HyDE          |    0      |      2.41 |
+| rouge2-F1           | Decomposition | HyDE          |    0.0026 |      1.3  |
+| rougeL-P            | Decomposition | HyDE          |    0.0001 |     -2    |
+| rougeL-R            | Decomposition | HyDE          |    0      |      2.86 |
+| rougeL-F1           | Decomposition | HyDE          |    0.0039 |      1.22 |
+| METEOR              | Decomposition | HyDE          |    0      |      2.84 |
+| BERTScore Precision | Decomposition | HyDE          |    0.0323 |     -0.8  |
+| BERTScore Recall    | Decomposition | HyDE          |    0.0001 |      2.13 |
+| BERTScore F1        | Decomposition | HyDE          |    0.0057 |      1.14 |
+| MATTR               | Decomposition | HyDE          |    0.7925 |     -0.09 |
+
 ## 🌎 About Conect2AI
 
 The research group [**Conect2AI**](http://conect2ai.dca.ufrn.br) is composed of undergraduate and graduate students from the Federal University of Rio Grande do Norte (UFRN). Our mission is to apply Artificial Intelligence (AI) and Machine Learning (ML) to emerging areas.
