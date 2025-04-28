@@ -95,102 +95,102 @@ Two representative examples are presented as follows, including generated answer
 **Q1. What is a GSD file, where can you get it, and what is its function? (Developer)**
 
 - **Generated Answer (Base + Gemma - Developer):**  
-  ```text
-    A GSD file (German: Geräte-Stücklisten Datei, meaning "device description file") is a text file that describes a PROFIBUS slave device to a master controller.
+```text
+A GSD file (German: Geräte-Stücklisten Datei, meaning "device description file") is a text file that describes a PROFIBUS slave device to a master controller.
 
-    Where to get it: GSD files are provided by the manufacturer of the PROFIBUS slave device. They are typically available for download from the manufacturer's website or included on the device's documentation.
+Where to get it: GSD files are provided by the manufacturer of the PROFIBUS slave device. They are typically available for download from the manufacturer's website or included on the device's documentation.
 
-    Function: The GSD file contains information such as:
+Function: The GSD file contains information such as:
 
-    *   Device name and manufacturer
-    *   Module type and hardware revision
-    *   Input/Output data block definitions (data types, addresses, etc.)
-    *   Parameterization options
-    *   Communication parameters
+*   Device name and manufacturer
+*   Module type and hardware revision
+*   Input/Output data block definitions (data types, addresses, etc.)
+*   Parameterization options
+*   Communication parameters
 
-    The PROFIBUS master uses this information to correctly configure and communicate with the slave device. Without a GSD file, the master would not know how to interpret the data from the slave or how to configure its parameters.
-  ```
+The PROFIBUS master uses this information to correctly configure and communicate with the slave device. Without a GSD file, the master would not know how to interpret the data from the slave or how to configure its parameters.
+```
 
  - **Generated Answer (Base + GPT - Developer):**  
-  ```text
-    A GSD file, or General Station Description file, is a crucial component in the PROFIBUS protocol that provides detailed information about a device's capabilities and parameters. It serves as a standardized electronic data sheet that allows for the configuration and integration of devices from different manufacturers within a PROFIBUS network.
+```text
+A GSD file, or General Station Description file, is a crucial component in the PROFIBUS protocol that provides detailed information about a device's capabilities and parameters. It serves as a standardized electronic data sheet that allows for the configuration and integration of devices from different manufacturers within a PROFIBUS network.
 
-    ### Function of a GSD File:
-    1. Device Description: It contains essential information such as vendor and device names, hardware and software versions, supported baud rates, and signal assignments.
-    2. Configuration Support: The GSD file enables the configuration of PROFIBUS networks by providing the necessary parameters for both master and slave devices. This includes details on the maximum number of slaves that can be connected to a master and the specific I/O channels available on slave devices.
-    3. Diagnostic Information: It includes diagnostic texts and information about available modules, which is particularly useful for troubleshooting and maintenance.
-    4. Flexibility: The format allows for both mandatory and optional parameters, making it adaptable to various device types and functionalities.
+### Function of a GSD File:
+1. Device Description: It contains essential information such as vendor and device names, hardware and software versions, supported baud rates, and signal assignments.
+2. Configuration Support: The GSD file enables the configuration of PROFIBUS networks by providing the necessary parameters for both master and slave devices. This includes details on the maximum number of slaves that can be connected to a master and the specific I/O channels available on slave devices.
+3. Diagnostic Information: It includes diagnostic texts and information about available modules, which is particularly useful for troubleshooting and maintenance.
+4. Flexibility: The format allows for both mandatory and optional parameters, making it adaptable to various device types and functionalities.
 
-    ### Where to Obtain a GSD File:
-    GSD files can typically be obtained from the device manufacturer’s website or through their technical support. Manufacturers usually provide GSD files for their devices as part of the product documentation, ensuring that users can easily access the necessary files for network configuration.
+### Where to Obtain a GSD File:
+GSD files can typically be obtained from the device manufacturer’s website or through their technical support. Manufacturers usually provide GSD files for their devices as part of the product documentation, ensuring that users can easily access the necessary files for network configuration.
 
-    In summary, GSD files are essential for the effective integration and operation of devices in a PROFIBUS network, facilitating a manufacturer-independent configuration process.
-  ```
+In summary, GSD files are essential for the effective integration and operation of devices in a PROFIBUS network, facilitating a manufacturer-independent configuration process.
+```
 
 - **Reference Answer (NotebookLM - Developer):**  
-  ```text
-    A General Station Description (GSD) file is a specially formatted ASCII file that serves as an electronic device data sheet for PROFIBUS devices. It is also referred to as a "Communication Feature List".
-    You can typically obtain the GSD file from the device manufacturer of a DP-Slave or a DP-Master. In the case of Profile GSD files, which are defined by the PA profile, they are made available by PNO (PROFIBUS and PROFINET International) and can be found on the PI web server.
-    The function of a GSD file is multifaceted:
+```text
+A General Station Description (GSD) file is a specially formatted ASCII file that serves as an electronic device data sheet for PROFIBUS devices. It is also referred to as a "Communication Feature List".
+You can typically obtain the GSD file from the device manufacturer of a DP-Slave or a DP-Master. In the case of Profile GSD files, which are defined by the PA profile, they are made available by PNO (PROFIBUS and PROFINET International) and can be found on the PI web server.
+The function of a GSD file is multifaceted:
 
-        * It provides configuration tools with information about a PROFIBUS device. This includes:
-            * Information needed to identify the connected device.
-            * A description of device data that can be accessed via the network, such as configurable parameters.
-            * A description of the communication capabilities supported by the device, such as transmission rate.
-            * Additional vendor-specific information.
+    * It provides configuration tools with information about a PROFIBUS device. This includes:
+        * Information needed to identify the connected device.
+        * A description of device data that can be accessed via the network, such as configurable parameters.
+        * A description of the communication capabilities supported by the device, such as transmission rate.
+        * Additional vendor-specific information.
 
-        * It allows a configuration tool to automate the device configuration process.
-        * It provides an open, consistent, and compatible approach for performing device configuration. All devices with a communication interface according to IEC 61784-1 CP3/1 and CP3/2 shall have a GSD file.
+    * It allows a configuration tool to automate the device configuration process.
+    * It provides an open, consistent, and compatible approach for performing device configuration. All devices with a communication interface according to IEC 61784-1 CP3/1 and CP3/2 shall have a GSD file.
 
-        * Its main intention is to provide device information on a PROFIBUS communication network.
-        * It characterizes the features and performance capabilities of PROFIBUS devices.
-        * It enables the user to check all data in the configuration phase of a PROFIBUS system, allowing errors to be avoided as early as possible.
-        * Based on its defined file format, it makes it possible to realize vendor-independent configuration tools for PROFIBUS systems.
-        * The configuration tool uses the GSD files for testing the data entered regarding the observance of limits and validity related to the performance of the individual device.
-        * The distinction of the GSD files is achieved by the vendor- and device-identifiers.
-        * It aims to achieve a simple Plug and Play configuration for PROFIBUS devices by listing the communication features.
-        * It comprises definitions for the physical layer, the protocol layer, the modeling of the slave / IO device, startup parameterization of the communication and application layers.
-        * A Profile-GSD allows for device replacement without changing the network configuration of the automation system, as the cyclic data exchange is not impacted.
-        * Via the GSD file, cyclic communication related device functionality is described.
-    In essence, the GSD file acts as a device-specific data sheet in a machine-readable format, enabling seamless integration and configuration of PROFIBUS devices from various manufacturers within a PROFIBUS network.
-  ```
+    * Its main intention is to provide device information on a PROFIBUS communication network.
+    * It characterizes the features and performance capabilities of PROFIBUS devices.
+    * It enables the user to check all data in the configuration phase of a PROFIBUS system, allowing errors to be avoided as early as possible.
+    * Based on its defined file format, it makes it possible to realize vendor-independent configuration tools for PROFIBUS systems.
+    * The configuration tool uses the GSD files for testing the data entered regarding the observance of limits and validity related to the performance of the individual device.
+    * The distinction of the GSD files is achieved by the vendor- and device-identifiers.
+    * It aims to achieve a simple Plug and Play configuration for PROFIBUS devices by listing the communication features.
+    * It comprises definitions for the physical layer, the protocol layer, the modeling of the slave / IO device, startup parameterization of the communication and application layers.
+    * A Profile-GSD allows for device replacement without changing the network configuration of the automation system, as the cyclic data exchange is not impacted.
+    * Via the GSD file, cyclic communication related device functionality is described.
+In essence, the GSD file acts as a device-specific data sheet in a machine-readable format, enabling seamless integration and configuration of PROFIBUS devices from various manufacturers within a PROFIBUS network.
+```
 ---
 
 **Q1. List the main causes of reflections in Profibus cables. (Eng)**
 
 - **Generated Answer (HyDE + Gemma - Eng):**  
-  ```text
-    The main causes of reflections in PROFIBUS cables, according to the provided documentation, are:
+```text
+The main causes of reflections in PROFIBUS cables, according to the provided documentation, are:
 
-    1.  PROFIBUS cable too long: Excessively long cables act like condensers, distorting the signal (rounding rising edges) and potentially preventing the receiver from correctly recognizing it.
-    2.  Non-Connected PROFIBUS Plugs: Unused PROFIBUS plugs with integrated inductors generate signal interference if not connected to a station.
-    3.  Defective Bus Terminator: This includes having too many terminators active (resulting in a 180° reflected signal) or a missing terminator (resulting in a non-inverted reflection). A break in the data lines also produces a similar effect.
-  ```
+1.  PROFIBUS cable too long: Excessively long cables act like condensers, distorting the signal (rounding rising edges) and potentially preventing the receiver from correctly recognizing it.
+2.  Non-Connected PROFIBUS Plugs: Unused PROFIBUS plugs with integrated inductors generate signal interference if not connected to a station.
+3.  Defective Bus Terminator: This includes having too many terminators active (resulting in a 180° reflected signal) or a missing terminator (resulting in a non-inverted reflection). A break in the data lines also produces a similar effect.
+```
 
  - **Generated Answer (HyDE + GPT - Eng):**  
-  ```text
-      The main causes of reflections in Profibus cables are:
+```text
+The main causes of reflections in Profibus cables are:
 
-      1. Cable too long: Excessive length can alter the signal shape, leading to recognition issues by the receiver.
-      2. Non-connected Profibus plugs: Open connectors can create signal interference due to integrated inductors.
-      3. Defective bus terminator: Errors such as too many or missing terminators can cause signal reflections, either inverting or maintaining the signal's amplitude.
+1. Cable too long: Excessive length can alter the signal shape, leading to recognition issues by the receiver.
+2. Non-connected Profibus plugs: Open connectors can create signal interference due to integrated inductors.
+3. Defective bus terminator: Errors such as too many or missing terminators can cause signal reflections, either inverting or maintaining the signal's amplitude.
 
-      These factors can disrupt communication and signal integrity in Profibus networks.
-  ```
+These factors can disrupt communication and signal integrity in Profibus networks.
+```
 
 - **Reference Answer (NotebookLM - Eng):**  
-  ```text
-    The main causes of reflections in PROFIBUS cables, according to the sources, are:
-        
-    *   Cable faults such as cable breaks, bad contacts, and damaged PROFIBUS cables.
-    *   Faulty terminating resistors.
-    *   Stubs. Stubs are not permitted in RS485 segments.
-    *   Defective bus terminators, which can occur if too many terminators are switched on or if a bus terminator is missing. In both cases, signal reflections are generated.
-    *   The assumed capacitive load of the cable, which is why series inductances are integrated into the connector plate for cable termination according to IEC 61158-2.
-    *   Improper or absent bus terminations at the ends of each PROFIBUS segment. Bus terminations are necessary for good signal transmission and to avoid reflections.
+```text
+The main causes of reflections in PROFIBUS cables, according to the sources, are:
+    
+*   Cable faults such as cable breaks, bad contacts, and damaged PROFIBUS cables.
+*   Faulty terminating resistors.
+*   Stubs. Stubs are not permitted in RS485 segments.
+*   Defective bus terminators, which can occur if too many terminators are switched on or if a bus terminator is missing. In both cases, signal reflections are generated.
+*   The assumed capacitive load of the cable, which is why series inductances are integrated into the connector plate for cable termination according to IEC 61158-2.
+*   Improper or absent bus terminations at the ends of each PROFIBUS segment. Bus terminations are necessary for good signal transmission and to avoid reflections.
 
-    Reflections can corrupt PROFIBUS telegrams and are a sign of problems within the PROFIBUS system. Checking for reflections can be done with a handheld device during commissioning.
-  ```
+Reflections can corrupt PROFIBUS telegrams and are a sign of problems within the PROFIBUS system. Checking for reflections can be done with a handheld device during commissioning.
+```
 
 ## 📊 Evaluation Data
 
