@@ -7,7 +7,7 @@
 
 # Tailoring RAG Strategies for Industrial Protocols: A Comparative Study on PROFIBUS Document Retrieval using Gemma and GPT Models
 
-### ✍🏾 Authors: [Thaís Medeiros](https://github.com/thaisaraujom), [Morsinaldo Medeiros](https://github.com/Morsinaldo), [Matheus Andrade](https://github.com/DinizMaths), [Marianne Diniz](https://github.com/MarianneDiniz), [Ivanovitch Silva](https://github.com/ivanovitchm), [Dennis Brandão](https://scholar.google.com/citations?user=OxSKwvEAAAAJ&hl=en), [Paolo Ferrari](https://scholar.google.com/citations?user=-BIQbXMAAAAJ&hl=en)
+### ✍🏾 Authors: [Thaís Medeiros](https://github.com/thaisaraujom), [Morsinaldo Medeiros](https://github.com/Morsinaldo), [Matheus Andrade](https://github.com/DinizMaths), [Marianne Diniz](https://github.com/MarianneDiniz), [Ivanovitch Silva](https://github.com/ivanovitchm), [Massimiliano Gaffurini](https://scholar.google.it/citations?user=s6ZkzYYAAAAJ&hl=it),[Dennis Brandão](https://scholar.google.com/citations?user=OxSKwvEAAAAJ&hl=en), [Paolo Ferrari](https://scholar.google.com/citations?user=-BIQbXMAAAAJ&hl=en)
 
 ## 📚 Overview
 This repository contains the experimental study conducted for the paper *"Tailoring RAG Strategies for Industrial Protocols: A Comparative Study on PROFIBUS Document Retrieval using Gemma and GPT Models."*
