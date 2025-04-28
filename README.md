@@ -77,29 +77,29 @@ A GSD file (German: Geräte-Stücklisten Datei, meaning "device description file
 - **Reference Answer (NotebookLM - Developer):**  
 ```text
 A General Station Description (GSD) file is a specially formatted ASCII file that serves as an electronic device data sheet for PROFIBUS devices. It is also referred to as a "Communication Feature List".
-        You can typically obtain the GSD file from the device manufacturer of a DP-Slave or a DP-Master. In the case of Profile GSD files, which are defined by the PA profile, they are made available by PNO (PROFIBUS and PROFINET International) and can be found on the PI web server.
-        The function of a GSD file is multifaceted:
-        
-            * It provides configuration tools with information about a PROFIBUS device. This includes:
-                * Information needed to identify the connected device.
-                * A description of device data that can be accessed via the network, such as configurable parameters.
-                * A description of the communication capabilities supported by the device, such as transmission rate.
-                * Additional vendor-specific information.
+You can typically obtain the GSD file from the device manufacturer of a DP-Slave or a DP-Master. In the case of Profile GSD files, which are defined by the PA profile, they are made available by PNO (PROFIBUS and PROFINET International) and can be found on the PI web server.
+The function of a GSD file is multifaceted:
 
-            * It allows a configuration tool to automate the device configuration process.
-            * It provides an open, consistent, and compatible approach for performing device configuration. All devices with a communication interface according to IEC 61784-1 CP3/1 and CP3/2 shall have a GSD file.
+    * It provides configuration tools with information about a PROFIBUS device. This includes:
+        * Information needed to identify the connected device.
+        * A description of device data that can be accessed via the network, such as configurable parameters.
+        * A description of the communication capabilities supported by the device, such as transmission rate.
+        * Additional vendor-specific information.
 
-            * Its main intention is to provide device information on a PROFIBUS communication network.
-            * It characterizes the features and performance capabilities of PROFIBUS devices.
-            * It enables the user to check all data in the configuration phase of a PROFIBUS system, allowing errors to be avoided as early as possible.
-            * Based on its defined file format, it makes it possible to realize vendor-independent configuration tools for PROFIBUS systems.
-            * The configuration tool uses the GSD files for testing the data entered regarding the observance of limits and validity related to the performance of the individual device.
-            * The distinction of the GSD files is achieved by the vendor- and device-identifiers.
-            * It aims to achieve a simple Plug and Play configuration for PROFIBUS devices by listing the communication features.
-            * It comprises definitions for the physical layer, the protocol layer, the modeling of the slave / IO device, startup parameterization of the communication and application layers.
-            * A Profile-GSD allows for device replacement without changing the network configuration of the automation system, as the cyclic data exchange is not impacted.
-            * Via the GSD file, cyclic communication related device functionality is described.
-        In essence, the GSD file acts as a device-specific data sheet in a machine-readable format, enabling seamless integration and configuration of PROFIBUS devices from various manufacturers within a PROFIBUS network.
+    * It allows a configuration tool to automate the device configuration process.
+    * It provides an open, consistent, and compatible approach for performing device configuration. All devices with a communication interface according to IEC 61784-1 CP3/1 and CP3/2 shall have a GSD file.
+
+    * Its main intention is to provide device information on a PROFIBUS communication network.
+    * It characterizes the features and performance capabilities of PROFIBUS devices.
+    * It enables the user to check all data in the configuration phase of a PROFIBUS system, allowing errors to be avoided as early as possible.
+    * Based on its defined file format, it makes it possible to realize vendor-independent configuration tools for PROFIBUS systems.
+    * The configuration tool uses the GSD files for testing the data entered regarding the observance of limits and validity related to the performance of the individual device.
+    * The distinction of the GSD files is achieved by the vendor- and device-identifiers.
+    * It aims to achieve a simple Plug and Play configuration for PROFIBUS devices by listing the communication features.
+    * It comprises definitions for the physical layer, the protocol layer, the modeling of the slave / IO device, startup parameterization of the communication and application layers.
+    * A Profile-GSD allows for device replacement without changing the network configuration of the automation system, as the cyclic data exchange is not impacted.
+    * Via the GSD file, cyclic communication related device functionality is described.
+In essence, the GSD file acts as a device-specific data sheet in a machine-readable format, enabling seamless integration and configuration of PROFIBUS devices from various manufacturers within a PROFIBUS network.
 ```
 ---
 
