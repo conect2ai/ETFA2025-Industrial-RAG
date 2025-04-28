@@ -24,7 +24,10 @@ A set of 20 questions of varying complexity was formulated to assess the retriev
 
 ## 🗂️ Repository Structure
 
+```text
+ETFA2025-Industrial-RAG/
 ├── RAG_Dev/                        # Developer documents (Gemma model)
+│   ├── 2_RAG_Base.ipynb
 │   ├── 3_RAG_Decomposition.ipynb
 │   └── 4_RAG_HyDE.ipynb
 ├── RAG_Dev_gpt/                    # Developer documents (GPT model)               
@@ -40,11 +43,12 @@ A set of 20 questions of varying complexity was formulated to assess the retriev
 │   ├── 3_RAG_Decomposition.ipynb
 │   └── 4_RAG_HyDE.ipynb
 ├── Validation_Results/             # Resulting DataFrames from `5_Validation_notebookLM_Sample.ipynb`
-├── 1_Text_Extraction.ipynb            # Text extraction
+├── 1_Text_Extraction.ipynb          # Text extraction
 ├── 5_Validation_notebookLM_Sample.ipynb  # Validation against NotebookLM references
-├── 6_Analysis_Sample.ipynb            # Analysis of results
-├── requirements.txt                   # Python dependencies
-└── README.md                          # Project overview and usage
+├── 6_Analysis_Sample.ipynb          # Analysis of results
+├── requirements.txt                 # Python dependencies
+└── README.md                        # Project overview and usage
+```
 
 ## 🌎 About Conect2AI
 
