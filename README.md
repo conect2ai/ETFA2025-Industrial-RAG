@@ -56,37 +56,37 @@ The evaluation involved 20 manually formulated questions covering different comp
 
 ### Developer Category
 
-1. **Q1.** What is a GSD file, where can you get it, and what is its function?
-2. **Q2.** What is a token message and how and which devices use it?
-3. **Q3.** Which protocol parameter describes the slave's action time after receiving a message?
-4. **Q4.** How to calculate DP cycle time?
-5. **Q5.** Briefly explain the function of a watchdog timer in a PROFIBUS DP slave.
-6. **Q6.** Briefly explain the meaning of “sync” and “freeze” modes. Which device(s) must support these modes?
-7. **Q7.** Discuss the factors that have a significant effect on the overall cycle time of a DP network.
-8. **Q8.** What are the four operating modes of a DP class 1 master? Briefly explain the interaction between the master and its assigned slaves in each mode.
-9. **Q9.** The data unit of a configuration telegram contains the following 3 bytes represented in hexadecimal notation. Decode the meaning of the bytes. \n- Byte 0:  D1 \n- Byte 1:  23 \n- Byte 2:  70
-10. **Q10.** Briefly explain how a slave device, which is in cyclic data exchange, communicates the presence of a diagnostic fault to its controlling master. What does the master do about this?
+1. What is a GSD file, where can you get it, and what is its function?
+2. What is a token message and how and which devices use it?
+3. Which protocol parameter describes the slave's action time after receiving a message?
+4. How to calculate DP cycle time?
+5. Briefly explain the function of a watchdog timer in a PROFIBUS DP slave.
+6. Briefly explain the meaning of “sync” and “freeze” modes. Which device(s) must support these modes?
+7. Discuss the factors that have a significant effect on the overall cycle time of a DP network.
+8. What are the four operating modes of a DP class 1 master? Briefly explain the interaction between the master and its assigned slaves in each mode.
+9. The data unit of a configuration telegram contains the following 3 bytes represented in hexadecimal notation. Decode the meaning of the bytes. \n- Byte 0:  D1 \n- Byte 1:  23 \n- Byte 2:  70
+10. Briefly explain how a slave device, which is in cyclic data exchange, communicates the presence of a diagnostic fault to its controlling master. What does the master do about this?
 
 ### Engineering Category
 
-1. **Q1.** List the main causes of reflections in Profibus cables.
-2. **Q2.** What are the different interference coupling mechanisms in Profibus cables? What measures can be taken to reduce each type of interference?
-3. **Q3.** In which situations should spur lines not be used in Profibus DP network topology?
-4. **Q4.** Determine the minimum separation distance between a Profibus cable and the following cables:
+1. List the main causes of reflections in Profibus cables.
+2. What are the different interference coupling mechanisms in Profibus cables? What measures can be taken to reduce each type of interference?
+3. In which situations should spur lines not be used in Profibus DP network topology?
+4. Determine the minimum separation distance between a Profibus cable and the following cables:
 a. AS-Interface type Profibus cable
 b. 24V power cable for a digital output module
 c. Single-phase 240V AC power cable for supplying a DC power supply
 d. Grounding equipotential bonding cable between cabinets
 e. Three-phase 380V power cable for a Profibus frequency inverter
-5. **Q5.** Two control rooms located at opposite ends of an area must share the same Profibus network. Each room has its own grounding system, and there is a significant potential difference between them. List three methods to install the network in a way that avoids issues caused by separate ground potentials.
-6. **Q6.** Discuss the factors that have a significant effect on the overall cycle time of a DP network.
-7. **Q7.** A PA segment is used to wire 24 slave devices in a non-hazardous area. Determine the maximum spur length when:
+5. Two control rooms located at opposite ends of an area must share the same Profibus network. Each room has its own grounding system, and there is a significant potential difference between them. List three methods to install the network in a way that avoids issues caused by separate ground potentials.
+6. Discuss the factors that have a significant effect on the overall cycle time of a DP network.
+7. A PA segment is used to wire 24 slave devices in a non-hazardous area. Determine the maximum spur length when:
 a. Each spur carries only one slave,
 b. Each spur carries four slaves.
 What is the maximum length of the main trunk cable in each case?
-8. **Q8.** Does PA wiring have to use screened twisted pair cable?
-9. **Q9.** A non-hazardous plant is currently fitted with 4 to 20 mA instrumentation, wired using a mixture of single and multi-core cable. What are the main considerations when considering moving over to a PROFIBUS PA system?
-10. **Q10.** Determine the maximum trunk and spur cable lengths for a non-intrinsically safe MBP segment with 20 slaves each connected via the maximum possible spur length. Estimate the required coupler current rating if each slave device takes a maximum of 14 mA.
+8. Does PA wiring have to use screened twisted pair cable?
+9. A non-hazardous plant is currently fitted with 4 to 20 mA instrumentation, wired using a mixture of single and multi-core cable. What are the main considerations when considering moving over to a PROFIBUS PA system?
+10. Determine the maximum trunk and spur cable lengths for a non-intrinsically safe MBP segment with 20 slaves each connected via the maximum possible spur length. Estimate the required coupler current rating if each slave device takes a maximum of 14 mA.
 
 ## 📝 Sample Questions
 
